@@ -34,9 +34,9 @@ public class InitData implements CommandLineRunner {
         OrderLine orderline2 = new OrderLine("Berliner Döner bror", 49.0, 1);
         OrderLine orderline3 = new OrderLine("French toast", 20.0, 1);
 
-        orderline1.setOrder(order1);
-        orderline2.setOrder(order2);
-        orderline3.setOrder(order2);
+        order1.addOrderLine(orderline1);
+        order2.addOrderLine(orderline2);
+        order2.addOrderLine(orderline3);
 
         orderLineRepository.saveAll(List.of(orderline1, orderline2, orderline3));
     }

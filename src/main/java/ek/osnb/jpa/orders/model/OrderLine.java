@@ -1,5 +1,7 @@
 package ek.osnb.jpa.orders.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import ek.osnb.jpa.common.model.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -7,6 +9,7 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class OrderLine extends BaseEntity {
 
+    @JsonBackReference
     @ManyToOne
     private Order order;
 
